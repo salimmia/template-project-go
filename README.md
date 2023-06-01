@@ -1,6 +1,6 @@
-# Template Project
+# Bookings and Reservation
 
-This is the repository for my golang project
+This is the repository for my bookings and reservation project.
 
 
 - Builts in Go version 1.18
