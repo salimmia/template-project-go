@@ -53,7 +53,7 @@ func main() {
 
 	// http.HandleFunc("/about", handlers.Repo.About)
 
-	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
+	fmt.Printf("%v\n", fmt.Sprintf("Starting application on port %s", portNumber))
 
 	srv := &http.Server{
 		Addr:    portNumber,
