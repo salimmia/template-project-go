@@ -159,8 +159,14 @@
     })();
 
     document.getElementById("colorButton").addEventListener("click", function () {
-        attention.error({
-            msg: 'Ooops...',
+        // attention.error({
+        //     msg: 'Ooops...',
+        // });
+        // attention.success({
+        //     msg: 'Yesss!',
+        // });
+        attention.toast({
+            msg: 'Signed is successfully',
         });
     })
 
@@ -224,6 +230,7 @@
                 text: msg,
                 footer: footer,
             })
+
         }
 
         let error = function (c) {
