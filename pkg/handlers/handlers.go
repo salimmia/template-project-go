@@ -34,7 +34,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 	m.App.Session.Put(r.Context(), "remote_id", remoteIp)
 
-	render.RenderTemplate(w, "home.page.html", &models.TemplateData{})
+	render.RenderTemplate(w, "home.page.tmpl", &models.TemplateData{})
 }
 
 // About is the about page Handler
@@ -47,7 +47,7 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 
 	stringMap["remote_id"] = remoteIp
 
-	render.RenderTemplate(w, "about.page.html", &models.TemplateData{
+	render.RenderTemplate(w, "about.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
 	})
 }
