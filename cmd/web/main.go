@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/salimmia/bookings/pkg/config"
-	"github.com/salimmia/bookings/pkg/handlers"
-	"github.com/salimmia/bookings/pkg/render"
+	"github.com/salimmia/bookings/internal/config"
+	"github.com/salimmia/bookings/internal/handlers"
+	"github.com/salimmia/bookings/internal/render"
 	// "os"
 )
 

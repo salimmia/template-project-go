@@ -5,8 +5,8 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/salimmia/bookings/pkg/config"
-	"github.com/salimmia/bookings/pkg/handlers"
+	"github.com/salimmia/bookings/internal/config"
+	"github.com/salimmia/bookings/internal/handlers"
 )
 
 func routes(app *config.AppConfig) http.Handler {

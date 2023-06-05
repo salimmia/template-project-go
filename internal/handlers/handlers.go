@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/salimmia/bookings/pkg/config"
-	"github.com/salimmia/bookings/pkg/models"
-	"github.com/salimmia/bookings/pkg/render"
+	"github.com/salimmia/bookings/internal/config"
+	"github.com/salimmia/bookings/internal/models"
+	"github.com/salimmia/bookings/internal/render"
 )
 
 // Repo the repository used by the handlers
