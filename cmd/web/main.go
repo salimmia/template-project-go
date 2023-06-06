@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"net/http"
@@ -9,6 +10,7 @@ import (
 	"github.com/alexedwards/scs/v2"
 	"github.com/salimmia/bookings/internal/config"
 	"github.com/salimmia/bookings/internal/handlers"
+	"github.com/salimmia/bookings/internal/models"
 	"github.com/salimmia/bookings/internal/render"
 	// "os"
 )
@@ -20,6 +22,9 @@ var session *scs.SessionManager
 
 // main is the main application function
 func main() {
+	// What I am going to put in the session
+	gob.Register(models.Reservation{})
+
 	// change this to true when in production
 	app.InProduction = false
 	session = scs.New()
