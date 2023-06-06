@@ -63,5 +63,4 @@ func (f *Form) IsEmail(field string){
 	if !govalidator.IsEmail(f.Get(field)){
 		f.Errors.Add(field, "Invalid email address")
 	}
-	return
 }
