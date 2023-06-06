@@ -49,7 +49,7 @@ func (f *Form) Has(field string, r *http.Request) bool{
 
 // MinLength checks for strings minimum length
 func (f *Form) MinLength(field string, length int, r *http.Request) bool{
-	x := f.Errors.Get(field)
+	x := r.Form.Get(field)
 
 	if len(x) < length{
 		f.Errors.Add(field, fmt.Sprintf("This field must be at least %d characters long", length))
@@ -63,5 +63,4 @@ func (f *Form) IsEmail(field string){
 	if !govalidator.IsEmail(f.Get(field)){
 		f.Errors.Add(field, "Invalid email address")
 	}
-	return
 }
