@@ -3,6 +3,13 @@ package handlers
 import (
 	"encoding/gob"
 	"fmt"
+	"html/template"
+	"log"
+	"net/http"
+	"os"
+	"path/filepath"
+	"time"
+
 	"github.com/alexedwards/scs/v2"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -10,11 +17,6 @@ import (
 	"github.com/salimmia/bookings/internal/config"
 	"github.com/salimmia/bookings/internal/models"
 	"github.com/salimmia/bookings/internal/render"
-	"html/template"
-	"log"
-	"net/http"
-	"path/filepath"
-	"time"
 )
 
 var app config.AppConfig
@@ -28,6 +30,12 @@ func getRoutes() http.Handler {
 
 	// change this to true when in production
 	app.InProduction = false
+
+	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
+	app.InfoLog = infoLog
+
+	errorLog := log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+	app.ErrorLog = errorLog
 
 	// set up the session
 	session = scs.New()
