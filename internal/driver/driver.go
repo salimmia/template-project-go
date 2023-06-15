@@ -3,6 +3,7 @@ package driver
 import (
 	"database/sql"
 	"time"
+	_"github.com/go-sql-driver/mysql"
 )
 
 type DB struct{
@@ -54,7 +55,6 @@ func NewDatabase(dsn string) (*sql.DB, error){
 
 	if err != nil{
 		return nil, err
-
 	}
 
 	if err = db.Ping(); err != nil{
